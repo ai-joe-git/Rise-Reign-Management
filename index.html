@@ -750,42 +750,33 @@ searchInput.addEventListener('input', (e) => {
     createModelCards(filteredModels);
 });
 
-</script>
 
-// Menu Toggle Functionality
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
+    <script>
+        // Menu Toggle Functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
 
-menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
 
-// Close menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
-});
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
 
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-    }
-});
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
@@ -798,7 +789,7 @@ window.addEventListener('scroll', function() {
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -808,3 +799,4 @@ window.addEventListener('scroll', function() {
     </script>
 </body>
 </html>
+
