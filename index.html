@@ -284,6 +284,363 @@
             </div>
         </div>
     </section>
+<!-- Previous code remains the same until the testimonials section -->
+
+    <section class="services" id="services">
+        <div class="services-container">
+            <h2 class="section-title">Our Premium Services</h2>
+            <div class="services-grid">
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <div class="icon-circle"></div>
+                    </div>
+                    <h3>Account Growth Strategy</h3>
+                    <p>Custom-tailored growth strategies that leverage market trends, analytics, and proven methodologies to exponentially increase your following and revenue. Our models typically see 200-500% growth within the first quarter.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <div class="icon-circle"></div>
+                    </div>
+                    <h3>Content Optimization</h3>
+                    <p>Expert guidance on content creation, timing, and presentation. We analyze your metrics to determine what resonates with your audience, helping you create content that converts casual viewers into loyal subscribers.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <div class="icon-circle"></div>
+                    </div>
+                    <h3>Brand Development</h3>
+                    <p>Transform your personal brand into a powerful digital empire. Our team helps you develop a unique identity that stands out in the market and attracts high-value subscribers.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <div class="icon-circle"></div>
+                    </div>
+                    <h3>Monetization Mastery</h3>
+                    <p>Unlock multiple revenue streams through strategic pricing, premium content offerings, and exclusive experiences. Our models consistently outperform industry averages with our proven monetization techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-detailed" id="about-detailed">
+        <div class="about-detailed-container">
+            <h2 class="section-title">The Rise & Reign Difference</h2>
+            
+            <div class="mission-values glass">
+                <div class="mission-content">
+                    <h3>Our Mission</h3>
+                    <p>To empower digital creators with the tools, strategies, and support needed to build sustainable, profitable online empires while maintaining creative freedom and personal authenticity.</p>
+                </div>
+                <div class="values-content">
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li>Unwavering Integrity</li>
+                        <li>Innovative Excellence</li>
+                        <li>Personal Growth</li>
+                        <li>Empowering Success</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h3>Meet Our Leadership Team</h3>
+                <div class="team-grid">
+                    <div class="team-member glass">
+                        <div class="member-image"></div>
+                        <h4>Alexandra Reynolds</h4>
+                        <p>Founder & CEO</p>
+                        <p>Former top 0.1% creator turned industry pioneer</p>
+                    </div>
+                    <div class="team-member glass">
+                        <div class="member-image"></div>
+                        <h4>Marcus Chen</h4>
+                        <p>Head of Strategy</p>
+                        <p>Digital marketing veteran with 15+ years experience</p>
+                    </div>
+                    <div class="team-member glass">
+                        <div class="member-image"></div>
+                        <h4>Sarah Martinez</h4>
+                        <p>Brand Development Director</p>
+                        <p>Acclaimed personal branding specialist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="models" id="models">
+        <div class="models-container">
+            <h2 class="section-title">Our Rising Stars</h2>
+            
+            <div class="models-filter glass">
+                <input type="text" id="modelSearch" placeholder="Search models..." class="search-input">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="rising">Rising Stars</button>
+                    <button class="filter-btn" data-category="established">Established</button>
+                    <button class="filter-btn" data-category="elite">Elite</button>
+                </div>
+            </div>
+
+            <div class="models-grid">
+                <!-- Model cards will be dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+<style>
+/* Add these styles after the previous CSS */
+
+/* Services Section */
+.services {
+    padding: 6rem 2rem;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    margin-bottom: 1.5rem;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    margin: 0 auto;
+}
+
+/* About Detailed Section */
+.about-detailed {
+    padding: 6rem 2rem;
+    background: var(--glass-bg);
+}
+
+.about-detailed-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 4rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    margin: 0 auto 1rem;
+}
+
+/* Models Section */
+.models {
+    padding: 6rem 2rem;
+}
+
+.models-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.models-filter {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.search-input {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border-color: transparent;
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+    .mission-values {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+</style>
+
+<script>
+// Add this JavaScript after the previous script
+
+// Model data
+const modelData = [
+    {
+        name: "Victoria Rose",
+        category: "elite",
+        stats: "Top 0.1% Creator",
+        description: "Lifestyle and fashion influencer with a growing empire"
+    },
+    {
+        name: "Luna Star",
+        category: "rising",
+        stats: "400% Growth in 2 Months",
+        description: "Rapidly growing creator known for authentic content"
+    },
+    {
+        name: "Sophia Dreams",
+        category: "established",
+        stats: "1M+ Followers",
+        description: "Beauty and wellness content creator"
+    },
+    // Add more model data as needed
+];
+
+// Function to create model cards
+function createModelCards(models) {
+    const modelsGrid = document.querySelector('.models-grid');
+    modelsGrid.innerHTML = '';
+
+    models.forEach(model => {
+        const modelCard = document.createElement('div');
+        modelCard.className = 'team-member glass';
+        modelCard.innerHTML = `
+            <div class="member-image"></div>
+            <h4>${model.name}</h4>
+            <p class="stats">${model.stats}</p>
+            <p>${model.description}</p>
+        `;
+        modelsGrid.appendChild(modelCard);
+    });
+}
+
+// Initialize models
+createModelCards(modelData);
+
+// Filter functionality
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        const category = button.dataset.category;
+        const filteredModels = category === 'all' 
+            ? modelData 
+            : modelData.filter(model => model.category === category);
+        
+        createModelCards(filteredModels);
+    });
+});
+
+// Search functionality
+const searchInput = document.getElementById('modelSearch');
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredModels = modelData.filter(model => 
+        model.name.toLowerCase().includes(searchTerm) ||
+        model.description.toLowerCase().includes(searchTerm)
+    );
+    createModelCards(filteredModels);
+});
+</script>
+
+<!-- Previous body closing tags remain the same -->
 
     <script>
         // Navbar scroll effect
