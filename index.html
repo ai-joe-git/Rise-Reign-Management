@@ -3,60 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rise & Reign Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Rise & Reign Management - Premium OnlyFans Model Management Agency</title>
     <style>
-        * {
+        /* Modern CSS Reset */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
+        /* Custom Properties */
+        :root {
+            --primary: #ff3366;
+            --secondary: #6c63ff;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Global Styles */
         body {
-            background: linear-gradient(45deg, #0f0f3d, #1a1a4a, #2d2d6e);
-            color: white;
-            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+            color: var(--light);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        .background-animation {
+        /* Animated Background */
+        .animated-bg {
             position: fixed;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-        }
-
-        .floating-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            animation: float 15s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
-        }
-
-        .navbar {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, var(--primary) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, var(--secondary) 0%, transparent 50%);
+            animation: backgroundMove 15s ease-in-out infinite;
+        }
+
+        @keyframes backgroundMove {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(5%, 5%); }
+            50% { transform: translate(0, 10%); }
+            75% { transform: translate(-5%, 5%); }
+        }
+
+        /* Glassmorphic Elements */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem;
             z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 26, 26, 0.95);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--light);
+            text-decoration: none;
         }
 
         .nav-links {
@@ -65,179 +105,206 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--light);
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #c4c4ff;
+            color: var(--primary);
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-        }
-
+        /* Hero Section */
         .hero {
-            padding: 150px 5% 80px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #fff, #c4c4ff);
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #6b6bff, #4646ff);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
             display: inline-block;
-            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
             transition: transform 0.3s ease;
         }
 
         .cta-button:hover {
-            transform: scale(1.05);
+            transform: translateY(-3px);
         }
 
-        .services {
-            padding: 80px 5%;
+        /* About Section */
+        .about-section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .numbers {
-            padding: 80px 5%;
+        .testimonial-card {
+            padding: 2rem;
             text-align: center;
         }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .testimonial-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: var(--primary);
+            opacity: 0.8;
         }
 
-        .stat-card {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 2rem;
-            border-radius: 15px;
-        }
-
-        .stat-card h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #c4c4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
             .hero h1 {
                 font-size: 2.5rem;
             }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background-animation">
-        <script>
-            for(let i = 0; i < 50; i++) {
-                const circle = document.createElement('div');
-                circle.classList.add('floating-circle');
-                circle.style.left = Math.random() * 100 + 'vw';
-                circle.style.top = Math.random() * 100 + 'vh';
-                circle.style.width = Math.random() * 50 + 20 + 'px';
-                circle.style.height = circle.style.width;
-                document.querySelector('.background-animation').appendChild(circle);
-            }
-        </script>
-    </div>
-
+    <div class="animated-bg"></div>
+    
     <nav class="navbar">
-        <div class="logo">Rise & Reign</div>
-        <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#results">Results</a>
-            <a href="#contact">Contact</a>
+        <div class="nav-content">
+            <a href="#" class="logo">Rise & Reign</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#models">Models</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Elevate Your Digital Presence</h1>
-        <p>Join the elite community of content creators who have transformed their passion into a thriving business. Rise & Reign Management is your gateway to unprecedented growth and success in the digital content creation space.</p>
-        <a href="#contact" class="cta-button">Transform Your Future</a>
-    </section>
-
-    <section class="services">
-        <div class="glass-card">
-            <h2>Full Management</h2>
-            <p>We handle everything from chat management to content strategy, allowing you to focus solely on creation. Our expert team ensures maximum engagement and revenue optimization.</p>
-        </div>
-        <div class="glass-card">
-            <h2>Growth Strategy</h2>
-            <p>Leverage our proven marketing techniques and growth strategies. We've helped creators achieve 300-500% revenue increase within the first three months.</p>
-        </div>
-        <div class="glass-card">
-            <h2>Premium Support</h2>
-            <p>24/7 dedicated support team, technical assistance, and continuous optimization of your content strategy for maximum results.</p>
+    <section class="hero" id="home">
+        <div class="hero-content glass">
+            <h1>Rise & Reign Management</h1>
+            <p>Transforming Aspiring Models into Digital Empires</p>
+            <p class="subtitle">Where Influence Meets Excellence</p>
+            <a href="#contact" class="cta-button">Start Your Journey</a>
         </div>
     </section>
 
-    <section class="numbers">
-        <h2>Our Impact in Numbers</h2>
-        <div class="stats">
-            <div class="stat-card">
-                <h3>400%</h3>
-                <p>Average Revenue Growth</p>
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <div class="about-text glass">
+                <h2>Elevate Your Digital Presence</h2>
+                <p>At Rise & Reign Management, we're not just another agency – we're your pathway to unprecedented success in the digital content creation space. With our proven track record of transforming rising stars into industry icons, we provide the expertise, resources, and unwavering support needed to maximize your earning potential and build a lasting legacy.</p>
+                <p>Our elite team of industry veterans has helped countless creators achieve life-changing success, with many of our models seeing 300%+ revenue growth within their first three months.</p>
             </div>
-            <div class="stat-card">
-                <h3>50+</h3>
-                <p>Elite Creators</p>
-            </div>
-            <div class="stat-card">
-                <h3>24/7</h3>
-                <p>Support & Management</p>
+            <div class="about-image glass">
+                <!-- Placeholder for about image -->
             </div>
         </div>
     </section>
 
-    <section class="services">
-        <div class="glass-card">
-            <h2>Why Choose Rise & Reign?</h2>
-            <p>We're not just another management agency. We're your partners in success, providing personalized strategies, cutting-edge marketing techniques, and proven systems that deliver results. Our team of experts works tirelessly to help you reach your full potential.</p>
-        </div>
-        <div class="glass-card">
-            <h2>Our Promise</h2>
-            <p>When you join Rise & Reign, you're not just getting a management service - you're gaining a dedicated team committed to your success. We handle the complex aspects of growing your brand while you focus on what you do best: creating amazing content.</p>
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-grid">
+            <div class="testimonial-card glass">
+                <div class="testimonial-image"></div>
+                <h3>Sarah M.</h3>
+                <p>"Rise & Reign transformed my online presence. Within two months, my revenue increased by 500%. Their guidance and support are unmatched in the industry."</p>
+            </div>
+            <div class="testimonial-card glass">
+                <div class="testimonial-image"></div>
+                <h3>Jessica R.</h3>
+                <p>"Joining Rise & Reign was the best career decision I've ever made. They provided me with the tools and strategies to build a seven-figure empire."</p>
+            </div>
+            <div class="testimonial-card glass">
+                <div class="testimonial-image"></div>
+                <h3>Emma K.</h3>
+                <p>"From day one, Rise & Reign treated me like family. Their personalized approach and industry expertise helped me achieve financial freedom."</p>
+            </div>
         </div>
     </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
